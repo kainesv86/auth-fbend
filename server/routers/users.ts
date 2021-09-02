@@ -21,7 +21,7 @@ const registerSchema = Joi.object({
         email: Joi.string().email().required(),
 });
 
-router.get("/me", auth, async (req, res) => {
+router.get("/", auth, async (req, res) => {
         const { _id } = req.user as { _id: string };
 
         const user = await getDb()
